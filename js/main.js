@@ -1,5 +1,5 @@
 /* ============================================================
-   力擎机械 · 交互脚本
+   AMECA机械 · 交互脚本
    - 主题切换（深色/浅色/跟随系统）
    - 移动端菜单
    - 搜索框交互
@@ -217,5 +217,5 @@
     `;
     document.head.appendChild(shrinkStyle);
 
-    console.log('%c力擎机械 · Premium Frontend Ready', 'color:#ff6a13;font-weight:bold;font-size:14px;');
+    console.log('%cAMECA机械 · Premium Frontend Ready', 'color:#ff6a13;font-weight:bold;font-size:14px;');
 })();

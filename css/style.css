@@ -7,11 +7,11 @@
 /* ---------- 主题变量 ---------- */
 :root {
     /* 品牌色：工业橙 + 深钢蓝 */
-    --c-accent: #ff6a13;
-    --c-accent-soft: #ff8a42;
-    --c-accent-glow: rgba(255, 106, 19, 0.45);
-    --c-steel: #2a6f97;
-    --c-gold: #f4a52a;
+    --c-accent: #2e2bf5;
+    --c-accent-soft: #2e2bf5;
+    --c-accent-glow: #2e2bf5;
+    --c-steel: #2e2bf5;
+    --c-gold: #2e2bf5;
 
     /* 深色主题（默认） */
     --bg-base: #0d1117;
