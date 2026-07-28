@@ -56,10 +56,20 @@
     const menuToggle = document.getElementById('menuToggle');
     const mainNav = document.querySelector('.main-nav');
 
+    function updateMenuToggleAria(open) {
+        const key = open ? 'aria.menu.close' : 'aria.menu.open';
+        menuToggle.setAttribute('data-i18n-aria', key);
+        if (window.AMECA_i18n) {
+            const lang = window.AMECA_i18n.getLang();
+            menuToggle.setAttribute('aria-label', window.AMECA_i18n.t(key, lang));
+        }
+    }
+
     menuToggle.addEventListener('click', () => {
         const open = mainNav.classList.toggle('open');
         menuToggle.classList.toggle('active', open);
         menuToggle.setAttribute('aria-expanded', open);
+        updateMenuToggleAria(open);
     });
 
     // 点击导航链接后关闭移动菜单
@@ -68,6 +78,7 @@
             mainNav.classList.remove('open');
             menuToggle.classList.remove('active');
             menuToggle.setAttribute('aria-expanded', 'false');
+            updateMenuToggleAria(false);
         });
     });
 
@@ -206,14 +217,38 @@
         });
     });
 
-    /* ---------- 9. 顶部栏滚动收缩样式 ---------- */
+    /* ---------- 9. 顶部栏滚动加深（仅视觉，不改变高度，杜绝抖动） ---------- */
     const shrinkStyle = document.createElement('style');
     shrinkStyle.textContent = `
-        .site-header.scrolled { min-height: 64px; }
-        .site-header.scrolled .header-inner { height: 64px; }
-        .site-header.scrolled .header-bg-overlay { transform: scale(1.02) translateY(-10px); }
-        .site-header { transition: min-height 0.4s cubic-bezier(0.16,1,0.3,1); }
-        .header-inner { transition: height 0.4s cubic-bezier(0.16,1,0.3,1); }
+        .site-header.scrolled .header-bg-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(8, 12, 20, 0.45);
+            backdrop-filter: blur(12px) saturate(140%);
+            -webkit-backdrop-filter: blur(12px) saturate(140%);
+            transition: opacity 0.4s cubic-bezier(0.16,1,0.3,1);
+            pointer-events: none;
+        }
+        .site-header:not(.scrolled) .header-bg-overlay::after {
+            opacity: 0;
+        }
+        .site-header.scrolled .header-bg-overlay::after {
+            opacity: 1;
+        }
+        .site-header::after {
+            content: '';
+            position: absolute;
+            inset: auto 0 0 0;
+            height: 1px;
+            background: rgba(255,255,255,0.06);
+            opacity: 0;
+            transition: opacity 0.4s var(--ease-premium);
+            pointer-events: none;
+        }
+        .site-header.scrolled::after {
+            opacity: 1;
+        }
     `;
     document.head.appendChild(shrinkStyle);
 

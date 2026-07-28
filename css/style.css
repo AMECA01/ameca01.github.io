@@ -1,12 +1,12 @@
 /* ============================================================
-   力擎机械 · 挖掘机柴油泵网站
+   AMECA机械 · 挖掘机发动机配件网站
    Premium Frontend Stylesheet
-   Senior Developer 全程手工打造
+   Senior Developer 
    ============================================================ */
 
 /* ---------- 主题变量 ---------- */
 :root {
-    /* 品牌色：工业橙 + 深钢蓝 */
+    /* 品牌色：工业白 + 深钢蓝 */
     --c-accent: #2e2bf5;
     --c-accent-soft: #2e2bf5;
     --c-accent-glow: #2e2bf5;
@@ -25,7 +25,7 @@
     --text-secondary: #a8b3c2;
     --text-muted: #6b7686;
 
-    --header-height: 200px;
+    --header-height: 133px;
     --shadow-lift: 0 18px 50px -12px rgba(0, 0, 0, 0.55);
     --shadow-glow: 0 0 40px -8px var(--c-accent-glow);
 
@@ -116,7 +116,6 @@ input { font-family: inherit; }
     min-height: var(--header-height);
     display: flex;
     align-items: stretch;
-    overflow: hidden;
     isolation: isolate;
 }
 
@@ -238,19 +237,20 @@ input { font-family: inherit; }
 
 /* 登录按钮特殊样式 */
 .nav-login {
-    border: 1px solid var(--border-strong);
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 85, 229, 0.5);
+    background: rgba(0, 85, 229, 0.5);
+    color: #fff;
 }
 [data-theme="light"] .nav-login {
-    background: rgba(20, 30, 48, 0.05);
+    background: rgba(0, 85, 229, 0.5);
+    color: #fff;
 }
 .nav-login::before { display: none; }
 .nav-login:hover {
-    background: var(--c-accent);
-    border-color: var(--c-accent);
+    background: rgba(0, 85, 229, 0.75);
+    border-color: rgba(0, 85, 229, 0.9);
     color: #fff;
-    box-shadow: var(--shadow-glow);
+    box-shadow: 0 0 20px -4px rgba(0, 85, 229, 0.5);
 }
 
 /* 搜索框 */
@@ -853,7 +853,280 @@ input { font-family: inherit; }
     .back-to-top { right: 18px; bottom: 18px; }
 }
 
-/* 减弱动画偏好 */
+/* ============================================================
+   语言切换器
+   ============================================================ */
+.lang-switcher {
+    position: absolute;
+    top: 50%;
+    right: 70px;
+    transform: translateY(-50%);
+    z-index: 9999;
+}
+
+.lang-switcher-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-glass);
+    border-radius: 24px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-premium);
+    white-space: nowrap;
+    backdrop-filter: blur(8px);
+}
+
+[data-theme="light"] .lang-switcher-trigger {
+    color: var(--text-secondary);
+    background: rgba(20, 30, 48, 0.05);
+}
+
+.lang-switcher-trigger:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--c-accent);
+    color: #fff;
+}
+
+[data-theme="light"] .lang-switcher-trigger:hover {
+    background: rgba(20, 30, 48, 0.1);
+    color: var(--c-accent);
+}
+
+.lang-switcher-current {
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+}
+
+.lang-switcher-chevron {
+    transition: transform 0.3s var(--ease-premium);
+    pointer-events: none;
+}
+
+.lang-switcher-trigger[aria-expanded="true"] .lang-switcher-chevron {
+    transform: rotate(180deg);
+}
+
+/* 下拉菜单 */
+.lang-switcher-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 180px;
+    background: var(--bg-glass);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid var(--border-glass);
+    border-radius: 14px;
+    padding: 6px;
+    box-shadow: 0 16px 48px -12px rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all 0.25s var(--ease-premium);
+    z-index: 9999;
+}
+
+.lang-switcher-dropdown.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-size: 0.88rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s var(--ease-premium);
+}
+
+.lang-option:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .lang-option:hover {
+    background: rgba(20, 30, 48, 0.06);
+}
+
+.lang-option.active {
+    background: var(--c-accent);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ============================================================
+   RTL 布局覆盖（阿拉伯语）
+   ============================================================ */
+html[dir="rtl"] body {
+    font-family: "Noto Naskh Arabic", "Noto Sans SC", -apple-system, sans-serif;
+    text-align: right;
+}
+
+/* 导航镜像 */
+html[dir="rtl"] .main-nav ul {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .header-inner {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .brand {
+    flex-direction: row-reverse;
+}
+
+/* 搜索框 */
+html[dir="rtl"] .search-form {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .search-btn {
+    margin: 4px 0 4px 4px;
+}
+
+html[dir="rtl"] .search-suggestions {
+    flex-direction: row-reverse;
+}
+
+/* 侧边 accent 线镜像 */
+html[dir="rtl"] .stat-card::after {
+    left: auto;
+    right: 0;
+}
+
+/* 英雄区按钮 */
+html[dir="rtl"] .hero-actions {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .btn-primary svg {
+    transform: rotate(180deg);
+}
+
+html[dir="rtl"] .btn-primary:hover svg {
+    transform: rotate(180deg) translateX(4px);
+}
+
+/* 产品卡片 */
+html[dir="rtl"] .product-card {
+    text-align: right;
+}
+
+/* 关于我们区 */
+html[dir="rtl"] .about-list li {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .about-text .section-title {
+    text-align: right;
+}
+
+html[dir="rtl"] .about-visual-inner {
+    direction: ltr; /* 保持动画方向 */
+}
+
+/* 页脚 */
+html[dir="rtl"] .footer-inner {
+    direction: rtl;
+}
+
+html[dir="rtl"] .footer-brand {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .footer-bottom {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .footer-links {
+    flex-direction: row-reverse;
+}
+
+/* 回到顶部镜像 */
+html[dir="rtl"] .back-to-top {
+    right: auto;
+    left: 28px;
+}
+
+/* 主题切换镜像 */
+html[dir="rtl"] .theme-toggle {
+    right: auto;
+    left: 18px;
+}
+
+/* 语言切换器镜像 */
+html[dir="rtl"] .lang-switcher {
+    right: auto;
+    left: 70px;
+}
+
+html[dir="rtl"] .lang-switcher-dropdown {
+    right: auto;
+    left: 0;
+}
+
+html[dir="rtl"] .lang-option {
+    text-align: right;
+}
+
+/* 品牌文字 */
+html[dir="rtl"] .brand-text {
+    text-align: right;
+}
+
+/* Logo 动画 */
+html[dir="rtl"] .brand:hover .brand-mark {
+    transform: rotate(8deg) scale(1.08);
+}
+
+/* 导航链接下划线 */
+html[dir="rtl"] .nav-link::before {
+    left: auto;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+/* RTL 响应式 */
+@media (max-width: 860px) {
+    html[dir="rtl"] .main-nav ul {
+        flex-direction: column;
+    }
+
+    html[dir="rtl"] .back-to-top {
+        left: 18px;
+    }
+
+    html[dir="rtl"] .theme-toggle {
+        left: 14px;
+    }
+
+    html[dir="rtl"] .lang-switcher {
+        left: 62px;
+    }
+}
+
+@media (max-width: 480px) {
+    html[dir="rtl"] .hero-actions {
+        flex-direction: column;
+    }
+}
+
+/* ============================================================
+   减弱动画偏好
+   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;

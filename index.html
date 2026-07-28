@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMECA</title>
-    <meta name="description" content="专业挖掘机柴油泵研发制造，高品质工程机械核心零部件供应商">
+    <meta name="description" content="专业挖掘机柴油泵研发制造，高品质工程机械核心零部件供应商" data-i18n-meta="meta.description">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Oswald:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
 
         <div class="header-inner">
             <!-- 品牌Logo -->
-            <a href="#" class="brand" aria-label="亿达机械首页">
+            <a href="#" class="brand" aria-label="AMECA">
                 <span class="brand-mark" aria-hidden="true">
                     <svg viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20 2 L37 12 V30 L20 38 L3 30 V12 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -29,17 +29,17 @@
                 </span>
                 <span class="brand-text">
                     <span class="brand-name">AMECA</span>
-                    <span class="brand-sub">广州亿达机械有限公司</span>
+                    <span class="brand-sub" data-i18n="brand.sub">广州亿达机械有限公司</span>
                 </span>
             </a>
 
             <!-- 导航菜单 -->
             <nav class="main-nav" aria-label="主导航">
                 <ul>
-                    <li><a href="#" class="nav-link active" data-page="home">首页</a></li>
-                    <li><a href="#" class="nav-link" data-page="products">产品</a></li>
-                    <li><a href="#" class="nav-link" data-page="about">关于我们</a></li>
-                    <li><a href="#" class="nav-link nav-login" data-page="login">登录</a></li>
+                    <li><a href="#" class="nav-link active" data-page="home" data-i18n="nav.home">首页</a></li>
+                    <li><a href="#" class="nav-link" data-page="products" data-i18n="nav.products">产品</a></li>
+                    <li><a href="#" class="nav-link" data-page="about" data-i18n="nav.about">关于我们</a></li>
+                    <li><a href="#" class="nav-link nav-login" data-page="login" data-i18n="nav.login">登录</a></li>
                 </ul>
             </nav>
 
@@ -52,28 +52,26 @@
                             <path d="M20 20 L16.5 16.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </span>
-                    <input type="text" class="search-input" id="searchInput" placeholder="搜索柴油泵型号 / 配件编号…" aria-label="搜索">
-                    <button type="submit" class="search-btn" aria-label="搜索">
-                        <span>搜索</span>
-                    </button>
+                    <input type="text" class="search-input" id="searchInput" data-i18n-placeholder="search.placeholder" placeholder="搜索柴油泵型号 / 配件编号…" aria-label="搜索">
+                    <button type="submit" class="search-btn" aria-label="搜索" data-i18n="search.btn">搜索</button>
                 </form>
                 <!-- 快捷搜索建议 -->
                 <div class="search-suggestions" id="searchSuggestions">
-                    <span class="suggestion-label">热门搜索：</span>
-                    <button class="suggestion-tag" data-query="高压共轨泵">高压共轨油管</button>
-                    <button class="suggestion-tag" data-query="分配泵">柴油泵</button>
-                    <button class="suggestion-tag" data-query="喷油器">喷油器</button>
+                    <span class="suggestion-label" data-i18n="search.hot">热门搜索：</span>
+                    <button class="suggestion-tag" data-query="高压共轨泵" data-i18n="search.tag1">高压共轨油管</button>
+                    <button class="suggestion-tag" data-query="分配泵" data-i18n="search.tag2">柴油泵</button>
+                    <button class="suggestion-tag" data-query="喷油器" data-i18n="search.tag3">喷油器</button>
                 </div>
             </div>
 
             <!-- 移动端汉堡按钮 -->
-            <button class="menu-toggle" id="menuToggle" aria-label="打开菜单" aria-expanded="false">
+            <button class="menu-toggle" id="menuToggle" data-i18n-aria="aria.menu.open" aria-label="打开菜单" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </div>
 
         <!-- 主题切换按钮 -->
-        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+        <button class="theme-toggle" id="themeToggle" data-i18n-aria="aria.themeToggle" aria-label="切换主题">
             <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
                 <path d="M12 2 V5 M12 19 V22 M2 12 H5 M19 12 H22 M4.9 4.9 L7 7 M17 17 L19.1 19.1 M4.9 19.1 L7 17 M17 7 L19.1 4.9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -89,23 +87,23 @@
         <!-- 英雄区 -->
         <section class="hero" id="home">
             <div class="hero-content">
-                <span class="hero-eyebrow">CORE POWER COMPONENT</span>
+                <span class="hero-eyebrow" data-i18n="hero.eyebrow">核心动力组件</span>
                 <h1 class="hero-title">
-                    AMECA<br>
-                    <span class="gradient-text">广州亿达机械有限公司</span>
+                    <span data-i18n="hero.title1">AMECA</span><br>
+                    <span class="gradient-text" data-i18n="hero.title2">广州亿达机械有限公司</span>
                 </h1>
-                <p class="hero-desc">
+                <p class="hero-desc" data-i18n="hero.desc">
                     专注挖掘机柴油喷射系统核心零部件研发制造，<br>
                     以精密工艺铸就工程机械的强劲心脏。
                 </p>
                 <div class="hero-actions">
-                    <a href="#products" class="btn btn-primary magnetic">
-                        <span>探索产品</span>
+                    <a href="#products" class="btn btn-primary magnetic" data-i18n="hero.btn1">
+                        探索产品
                         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
-                    <a href="#about" class="btn btn-ghost magnetic">了解我们</a>
+                    <a href="#about" class="btn btn-ghost magnetic" data-i18n="hero.btn2">了解我们</a>
                 </div>
             </div>
 
@@ -113,15 +111,15 @@
             <div class="hero-stats">
                 <div class="stat-card glass magnetic">
                     <span class="stat-num" data-count="20">0</span><span class="stat-suffix">+</span>
-                    <span class="stat-label">年行业深耕</span>
+                    <span class="stat-label" data-i18n="hero.stat1.label">年行业深耕</span>
                 </div>
                 <div class="stat-card glass magnetic">
                     <span class="stat-num" data-count="1500">0</span><span class="stat-suffix">+</span>
-                    <span class="stat-label">适配机型</span>
+                    <span class="stat-label" data-i18n="hero.stat2.label">适配机型</span>
                 </div>
                 <div class="stat-card glass magnetic">
                     <span class="stat-num" data-count="99.8" data-decimal="1">0</span><span class="stat-suffix">%</span>
-                    <span class="stat-label">出厂合格率</span>
+                    <span class="stat-label" data-i18n="hero.stat3.label">出厂合格率</span>
                 </div>
             </div>
         </section>
@@ -129,9 +127,9 @@
         <!-- 产品展示区 -->
         <section class="products-section" id="products">
             <div class="section-head">
-                <span class="section-eyebrow">PRODUCTS</span>
-                <h2 class="section-title">核心产品矩阵</h2>
-                <p class="section-sub">覆盖主流挖掘机品牌的高精度燃油喷射组件</p>
+                <span class="section-eyebrow" data-i18n="products.eyebrow">产品系列</span>
+                <h2 class="section-title" data-i18n="products.title">核心产品矩阵</h2>
+                <p class="section-sub" data-i18n="products.sub">覆盖主流挖掘机品牌的高精度燃油喷射组件</p>
             </div>
 
             <div class="products-grid">
@@ -143,9 +141,9 @@
                             <circle cx="24" cy="25" r="5" stroke="currentColor" stroke-width="2.5"/>
                         </svg>
                     </div>
-                    <h3>高压共轨油管</h3>
-                    <p>喷射压力高达 2200bar，精准电控，适配国六排放标准。</p>
-                    <span class="product-tag">HPCR</span>
+                    <h3 data-i18n="product1.name">高压共轨油管</h3>
+                    <p data-i18n="product1.desc">喷射压力高达 2200bar，精准电控，适配国六排放标准。</p>
+                    <span class="product-tag" data-i18n="product.tag.hpcr">HPCR</span>
                 </article>
 
                 <article class="product-card glass magnetic" tabindex="0">
@@ -156,9 +154,9 @@
                             <circle cx="24" cy="24" r="4" stroke="currentColor" stroke-width="2.5"/>
                         </svg>
                     </div>
-                    <h3>柴油泵</h3>
-                    <p>机械式、电控式，结构可靠，适配大中小型工程机械动力。</p>
-                    <span class="product-tag">VE</span>
+                    <h3 data-i18n="product2.name">柴油泵</h3>
+                    <p data-i18n="product2.desc">机械式、电控式，结构可靠，适配大中小型工程机械动力。</p>
+                    <span class="product-tag" data-i18n="product.tag.ve">VE</span>
                 </article>
 
                 <article class="product-card glass magnetic" tabindex="0">
@@ -169,9 +167,9 @@
                             <circle cx="24" cy="28" r="3" stroke="currentColor" stroke-width="2.5"/>
                         </svg>
                     </div>
-                    <h3>机械/电控喷油器</h3>
-                    <p>多段喷射控制，雾化均匀，降低油耗与排放，响应迅捷。</p>
-                    <span class="product-tag">GDI</span>
+                    <h3 data-i18n="product3.name">机械/电控喷油器</h3>
+                    <p data-i18n="product3.desc">多段喷射控制，雾化均匀，降低油耗与排放，响应迅捷。</p>
+                    <span class="product-tag" data-i18n="product.tag.gdi">GDI</span>
                 </article>
 
                 <article class="product-card glass magnetic" tabindex="0">
@@ -182,9 +180,9 @@
                             <path d="M16 34 H32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <h3>三偶件</h3>
-                    <p>高精密度，为高压系统提供可靠供油保障。</p>
-                    <span class="product-tag">FP</span>
+                    <h3 data-i18n="product4.name">三偶件</h3>
+                    <p data-i18n="product4.desc">高精密度，为高压系统提供可靠供油保障。</p>
+                    <span class="product-tag" data-i18n="product.tag.fp">FP</span>
                 </article>
             </div>
         </section>
@@ -193,31 +191,34 @@
         <section class="about-section" id="about">
             <div class="about-grid">
                 <div class="about-text">
-                    <span class="section-eyebrow">ABOUT US</span>
-                    <h2 class="section-title">精工铸芯，十年如一日</h2>
-                    <p class="about-lead">
+                    <span class="section-eyebrow" data-i18n="about.eyebrow">关于我们</span>
+                    <h2 class="section-title" data-i18n="about.title">精工铸芯，十年如一日</h2>
+                    <p class="about-lead" data-i18n="about.lead">
                         AMECA创立于 2005 年，专注于工程机械柴油喷射系统的研发与制造。
                         我们深谙每一颗螺钉的扭矩、每一道油路的精度，都是挖掘机澎湃动力的基石。
                     </p>
                     <ul class="about-list">
                         <li>
-                            <span class="check">✓</span> 自有精密加工中心，关键工序自主可控
+                            <span class="check">✓</span>
+                            <span data-i18n="about.list1">自有精密加工中心，关键工序自主可控</span>
                         </li>
                         <li>
-                            <span class="check">✓</span> 与主机厂同步开发，全生命周期适配
+                            <span class="check">✓</span>
+                            <span data-i18n="about.list2">与主机厂同步开发，全生命周期适配</span>
                         </li>
                         <li>
-                            <span class="check">✓</span> 通过 ISO 9001 与 IATF 16949 双认证
+                            <span class="check">✓</span>
+                            <span data-i18n="about.list3">通过 ISO 9001 与 IATF 16949 双认证</span>
                         </li>
                     </ul>
-                    <a href="#" class="btn btn-outline magnetic">查看企业资质</a>
+                    <a href="#" class="btn btn-outline magnetic" data-i18n="about.btn">查看企业资质</a>
                 </div>
                 <div class="about-visual glass">
                     <div class="about-visual-inner">
                         <div class="ring"></div>
                         <div class="ring ring-2"></div>
                         <div class="core-dot"></div>
-                        <span class="visual-label">PRECISION · POWER · PERSISTENCE</span>
+                        <span class="visual-label" data-i18n="visual.label">精密 · 动力 · 持久</span>
                     </div>
                 </div>
             </div>
@@ -236,66 +237,67 @@
                 </span>
                 <div>
                     <span class="brand-name">AMECA</span>
-                    <p class="footer-tagline">工程机械核心动力零部件专家</p>
+                    <p class="footer-tagline" data-i18n="footer.tagline">工程机械核心动力零部件专家</p>
                 </div>
             </div>
 
             <div class="footer-cols">
                 <div class="footer-col">
-                    <h4>产品</h4>
+                    <h4 data-i18n="footer.col1.title">产品</h4>
                     <ul>
-                        <li><a href="#">高压共轨油管</a></li>
-                        <li><a href="#">柴油泵</a></li>
-                        <li><a href="#">机械/电控喷油器</a></li>
-                        <li><a href="#">三偶件</a></li>
+                        <li><a href="#" data-i18n="footer.col1.item1">高压共轨油管</a></li>
+                        <li><a href="#" data-i18n="footer.col1.item2">柴油泵</a></li>
+                        <li><a href="#" data-i18n="footer.col1.item3">机械/电控喷油器</a></li>
+                        <li><a href="#" data-i18n="footer.col1.item4">三偶件</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>公司</h4>
+                    <h4 data-i18n="footer.col2.title">公司</h4>
                     <ul>
-                        <li><a href="#">关于我们</a></li>
-                        <li><a href="#">研发实力</a></li>
-                        <li><a href="#">新闻动态</a></li>
-                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#" data-i18n="footer.col2.item1">关于我们</a></li>
+                        <li><a href="#" data-i18n="footer.col2.item2">研发实力</a></li>
+                        <li><a href="#" data-i18n="footer.col2.item3">新闻动态</a></li>
+                        <li><a href="#" data-i18n="footer.col2.item4">加入我们</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>支持</h4>
+                    <h4 data-i18n="footer.col3.title">支持</h4>
                     <ul>
-                        <li><a href="#">技术文档</a></li>
-                        <li><a href="#">售后网点</a></li>
-                        <li><a href="#">在线咨询</a></li>
-                        <li><a href="#">登录系统</a></li>
+                        <li><a href="#" data-i18n="footer.col3.item1">技术文档</a></li>
+                        <li><a href="#" data-i18n="footer.col3.item2">售后网点</a></li>
+                        <li><a href="#" data-i18n="footer.col3.item3">在线咨询</a></li>
+                        <li><a href="#" data-i18n="footer.col3.item4">登录系统</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>联系</h4>
+                    <h4 data-i18n="footer.col4.title">联系</h4>
                     <ul>
-                        <li>amecadiesel88@gmail.com</li>
-                        <li>+86 16620058648</li>
-                        <li>中国 · 广州亿达机械有限公司</li>
+                        <li data-i18n="footer.col4.item1">amecadiesel88@gmail.com</li>
+                        <li data-i18n="footer.col4.item2">+86 16620058648</li>
+                        <li data-i18n="footer.col4.item3">中国 · 广州亿达机械有限公司</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>© 2026 AMECA LIQING MACHINERY. 保留所有权利。</p>
+            <p data-i18n="footer.copyright">© 2026 AMECA MACHINERY. 保留所有权利。</p>
             <div class="footer-links">
-                <a href="#">隐私政策</a>
-                <a href="#">服务条款</a>
-                <a href="#">网站地图</a>
+                <a href="#" data-i18n="footer.privacy">隐私政策</a>
+                <a href="#" data-i18n="footer.terms">服务条款</a>
+                <a href="#" data-i18n="footer.sitemap">网站地图</a>
             </div>
         </div>
     </footer>
 
     <!-- 回到顶部 -->
-    <button class="back-to-top" id="backToTop" aria-label="回到顶部">
+    <button class="back-to-top" id="backToTop" data-i18n-aria="aria.backToTop" aria-label="回到顶部">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 19 V5 M6 11 L12 5 L18 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
     </button>
 
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
